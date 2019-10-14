@@ -68,7 +68,12 @@
     id, name, age
   </sql>
 
-
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.hxjc.springboot.model.Student">
+    select
+    <include refid="Base_Column_List" />
+    from t_student
+    WHERE id = #{id}
+  </select>
 
   <select id="selectAllStudent"  resultMap="BaseResultMap">
     select
